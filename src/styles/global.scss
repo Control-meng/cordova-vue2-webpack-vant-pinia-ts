@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "MicrosoftYaHei", "Helvetica Neue", Helvetica, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    font-size: 14px;
+}
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+i {
+    font-style: normal;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.app-page {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+// 隐藏导航条
+::-webkit-scrollbar {
+    display: none;
+}

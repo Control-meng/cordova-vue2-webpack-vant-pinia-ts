@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "strict": true,
+        "jsx": "preserve",
+        "importHelpers": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "stripInternal": true,
+        "strictPropertyInitialization": false,
+        "baseUrl": ".",
+        "types": [
+            "node",
+            "webpack-env"
+            //  "unplugin-vue2-script-setup/types"
+        ],
+        "paths": {
+            "@/*": ["src/*"],
+            "ol": ["node_modules/@types/ol"],
+            "ol/*": ["node_modules/@types/ol/*"],
+            "node": ["node_modules/@type/node"]
+            // "unplugin-vue2-script-setup/types": []
+        },
+        "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx",
+        "src/utils/suc_expec_plugin.moc.js",
+        "plugins/*/types/index.d.ts"
+    ],
+    "exclude": ["node_modules"],
+    "vueCompilerOptions": {
+        // "experimentalCompatMode": 2
+        "target": 2.7
+    }
+}

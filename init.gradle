@@ -1,0 +1,30 @@
+def repoConfig = {
+    all { ArtifactRepository repo ->
+        if (repo instanceof MavenArtifactRepository) {
+            def url = repo.url.toString()
+            if (url.contains('dl.google.com/dl/android') ||
+                url.contains('jcenter.bintray.com') ||
+                url.contains('repo1.maven.org/maven2') ||
+                url.contains('repo.maven.apache.org/maven2') ||
+                url.contains('maven.google.com')
+            )
+            {
+                // println "gradle init: (${repo.name}: ${repo.url}) is replaced by aliyun mirror"
+                remove repo
+            }
+        }
+    }
+
+    maven { url 'https://maven.aliyun.com/repository/google' }
+    maven { url 'https://maven.aliyun.com/repository/central'}
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+}
+
+allprojects {
+    buildscript {
+        repositories repoConfig
+    }
+
+    repositories repoConfig
+}
